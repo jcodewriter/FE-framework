@@ -1,0 +1,40 @@
+<div class="navbar">
+  <div class="app-logo">
+    <img src="assets/imgs/logo.png" alt="logo" />
+  </div>
+  <div class="nav-menubar">
+    <div class="menubar-wrapper">
+      <ul>
+        <li
+          class="nav-item {{ selectedItem.id == item.id ? 'active' : '' }}"
+          *ngFor="let item of navItems"
+          (click)="onNavItemClick(item)"
+        >
+          <a class="nav-link" [routerLink]="item.route">{{ item.name }}</a>
+        </li>
+      </ul>
+      <span class="divider">|</span>
+      <ul>
+        <li>
+          <svg-icon
+            src="assets/svg/search.svg"
+            [svgStyle]="{ fill: '#314230' }"
+          ></svg-icon>
+        </li>
+        <li>
+          <svg-icon
+            src="assets/svg/groceries.svg"
+            [svgStyle]="{ fill: '#314230' }"
+          ></svg-icon>
+        </li>
+        <li>
+          <svg-icon
+            src="assets/svg/my-dole.svg"
+            [stretch]="true"
+            [svgStyle]="{ fill: '#314230' }"
+          ></svg-icon>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

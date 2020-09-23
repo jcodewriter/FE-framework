@@ -1,0 +1,95 @@
+.sidenav {
+  transition               : transform .5s;
+  transform                : translateX(0%);
+  height                   : 100%;
+  width                    : 750px;
+  background-color         : #ffffff;
+  float                    : right;
+  border-top-left-radius   : 30px;
+  border-bottom-left-radius: 30px;
+
+  & .sidenav-action {
+    display         : flex;
+    width           : 50px;
+    height          : 50px;
+    border-radius   : 50%;
+    position        : relative;
+    left            : -60px;
+    top             : 30px;
+    background-color: #6cc24b;
+    align-items     : center;
+    justify-content : center;
+    cursor          : pointer;
+    z-index         : 2;
+  }
+
+  & .sidenav-menu-wrapper {
+    & ul {
+      padding        : 150px 60px;
+      list-style-type: none;
+
+      & li.sidenav-item {
+        font-size     : 20px;
+        font-weight   : 500;
+        line-height   : 50px;
+        letter-spacing: .05em;
+
+        & a.sidenav-link {
+          color          : #006368;
+          text-decoration: none;
+        }
+
+      }
+
+      & li:hover {
+        transform  : translateX(10px);
+        transition : .1s;
+        font-weight: 600 !important;
+      }
+
+      & li.active {
+        font-weight: 600 !important;
+      }
+
+    }
+  }
+
+  & .healthy-img-wrapper {
+    position: absolute;
+    bottom  : 150px;
+    right   : 0;
+  }
+}
+
+.sidenav.hidden {
+  transition: transform .5s;
+  transform : translateX(108%);
+}
+
+@media only screen and (max-width: 992px) {
+  .sidenav {
+    transition               : transform .5s !important;
+    transform                : translateX(0%) !important;
+    float                    : left;
+    width                    : 100%;
+    border-top-left-radius   : 0;
+    border-bottom-left-radius: 0;
+
+    & .sidenav-action {
+      left: 85%;
+    }
+
+    & .sidenav-menu-wrapper {
+      width: 100%;
+
+      & ul {
+        padding: 150px 40px;
+      }
+    }
+  }
+
+  .sidenav.hidden {
+    transition: transform .5s !important;
+    transform : translateX(-100%) !important;
+  }
+}

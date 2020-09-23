@@ -1,0 +1,26 @@
+<div class="footer">
+  <div class="footer-navbar-wrapper">
+    <a
+      class="navbar-item {{ selectedItem.id == item.id ? 'active' : '' }}"
+      *ngFor="let item of navItems"
+      (click)="onNavItemClick(item)"
+      [routerLink]="item.route"
+    >
+      <span class="icon">
+        <svg-icon
+          src="{{ item.src }}"
+          [stretch]="true"
+          [svgStyle]="{ fill: '#314230' }"
+        ></svg-icon>
+      </span>
+      <span>{{ item.name }}</span>
+    </a>
+  </div>
+  <div class="footer-selected-wrapper">
+    <div class="selected-line-wrapper" *ngFor="let item of navItems">
+      <div
+        class="selected-line {{ selectedItem.id == item.id ? 'active' : '' }}"
+      ></div>
+    </div>
+  </div>
+</div>

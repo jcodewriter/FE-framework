@@ -1,0 +1,19 @@
+<div class="sidenav" [ngClass]="{ hidden: sidenavService.isSidenavVisible }">
+  <div class="sidenav-action">
+    <span class="material-icons" (click)="toggleState()"> close </span>
+  </div>
+  <div class="sidenav-menu-wrapper">
+    <ul>
+      <li
+        class="sidenav-item {{ selectedItem.id == item.id ? 'active' : '' }}"
+        *ngFor="let item of sideNavItems"
+        (click)="onSideNavItemClick(item)"
+      >
+        <a class="sidenav-link" [routerLink]="item.route">{{ item.name }}</a>
+      </li>
+    </ul>
+  </div>
+  <div class="healthy-img-wrapper">
+    <img src="assets/imgs/healthy-ingredients.png" />
+  </div>
+</div>
